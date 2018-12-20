@@ -51,10 +51,10 @@ const size = (props) => {
 
 const ProtoButton = React.forwardRef((props, ref) => (
   <Box as="button" type="button" ref={ref} {...props} >
-    { props.icon && !props.iconpos && <Icon name={props.icon} /> }
-    { props.icon && props.iconpos === 'left' && <Icon name={props.icon} /> }
+    { props.icon && !props.iconpos && <Icon name={props.icon} size={props.iconsize ? props.iconsize : '24px' } /> }
+    { props.icon && props.iconpos === 'left' && <Icon name={props.icon} size={props.iconsize ? props.iconsize : '24px' } /> }
     { props.children && <span>{props.children}</span> }
-    { props.icon && props.iconpos === 'right' && <Icon name={props.icon} /> }
+    { props.icon && props.iconpos === 'right' && <Icon name={props.icon} size={props.iconsize ? props.iconsize : '24px' }/> }
   </Box>
 ))
 
@@ -65,7 +65,6 @@ const Button = styled(ProtoButton)`
     cursor: pointer;
     text-decoration: none;
     text-align: center;
-    vertical-align: middle;
     line-height: 1;
     overflow: hidden;
     white-space: nowrap;
