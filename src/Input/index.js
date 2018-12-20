@@ -12,6 +12,26 @@ import {
   boxShadow
 } from 'styled-system'
 
+const validationColor = (validationState) => {
+  let color = '';
+
+  switch (validationState) {
+    case 'success':
+      color = '#28C081'
+      break;
+    case 'warning':
+      color = '#FD9D28'
+      break;
+    case 'error':
+      color = '#DC2C10'
+      break;
+    default:
+      color = ''
+  }
+
+  return color;
+}
+
 const Input = styled.input`
   appearance: none;
   font-size: 1rem;
@@ -30,6 +50,9 @@ const Input = styled.input`
   ${borderRadius}
   ${boxShadow}
 
+  ${'' /* border-width: ${props => props.validationState ? '2px' : '1px'} ; */}
+  ${'' /* border-color: ${props => validationColor(props.validationState)}; */}
+
   &:hover {
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
   }
@@ -44,6 +67,13 @@ const Input = styled.input`
     opacity: 0.4;
     pointer-events: none;
   }
+
+  &:focus:invalid {
+    border-color: ${props => validationColor('error')};
+  }
+  ${'' /* &:valid {
+    border-color: ${props => validationColor('success')};
+  } */}
 `
 
 Input.defaultProps = {

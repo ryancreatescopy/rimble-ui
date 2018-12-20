@@ -34,12 +34,27 @@ storiesOf('Form', module)
         <form action="">
           <Flex flexDirection="column" alignItems="stretch">
             <Field label="email" mb='3'>
-              <Input type='email' name='email' id='email' placeholder='email'/>
+              <Input type='email' name='email' id='email' placeholder='email' validationState="success"/>
             </Field>
             <Field label="password" mb='3'>
               <Input type='password' placeholder='password'/>
             </Field>
             <Button type='submit' icon='ArrowForward' iconpos='right' iconsize='20px'>Sign In</Button>
+          </Flex>
+        </form>
+      </Card>
+      <Card>
+        <form action="">
+          <Flex flexDirection="column" alignItems="stretch">
+            <Field label="Fields:">
+              <Input mb='3' placeholder='placeholder' validationState=""/>
+              <Input mb='3' placeholder='placeholder' validationState="success"/>
+              <Input mb='3' placeholder='placeholder' validationState="warning"/>
+              <Input mb='3' placeholder='placeholder' validationState="error"/>
+              <Input mb='3' placeholder='placeholder' required/>
+            </Field>
+
+            <Button type="submit" icon='Check' iconpos='right' size="large">Button</Button>
           </Flex>
         </form>
       </Card>
