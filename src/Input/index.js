@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import theme from '../theme'
 
 import {
+  space,
+  width,
   borders,
   borderColor,
   borderRadius,
@@ -21,6 +23,8 @@ const Input = styled.input`
   border: 1px solid;
   background: #FFFFFF;
 
+  ${space}
+  ${width}
   ${borders}
   ${borderColor}
   ${borderRadius}
