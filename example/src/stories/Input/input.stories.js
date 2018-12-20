@@ -4,7 +4,7 @@ import { withDocs } from 'storybook-readme';
 
 import MyREADME from './README.md';
 
-import { Input } from 'rimble-ui'
+import { Input, Button, Flex, Box, Card, Field } from 'rimble-ui'
 
 storiesOf('Form', module)
   .addDecorator(withDocs(MyREADME))
@@ -28,4 +28,20 @@ storiesOf('Form', module)
     <Input type='tel'/>
   )).add('url', () => (
     <Input type='url'/>
+  )).add('Form', () => (
+    <div>
+      <Card>
+        <form action="">
+          <Flex flexDirection="column" alignItems="stretch">
+            <Field label="email" mb='3'>
+              <Input type='email' name='email' id='email' placeholder='email'/>
+            </Field>
+            <Field label="password" mb='3'>
+              <Input type='password' placeholder='password'/>
+            </Field>
+            <Button type='submit' icon='ArrowForward' iconpos='right' iconsize='20px'>Sign In</Button>
+          </Flex>
+        </form>
+      </Card>
+    </div>
   ))
