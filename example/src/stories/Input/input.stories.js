@@ -4,7 +4,15 @@ import { withDocs } from 'storybook-readme';
 
 import MyREADME from './README.md';
 
-import { Input, Button, Flex, Box, Card, Field } from 'rimble-ui'
+import {
+  Input,
+  Button,
+  MetaMaskButton,
+  Flex,
+  Box,
+  Card,
+  Field
+} from 'rimble-ui'
 
 storiesOf('Form', module)
   .addDecorator(withDocs(MyREADME))
@@ -54,7 +62,8 @@ storiesOf('Form', module)
               <Input mb='3' placeholder='placeholder' required/>
             </Field>
 
-            <Button type="submit" icon='Check' iconpos='right' size="large">Button</Button>
+            {/* <Button type="submit" icon='Check' iconpos='right' size="large">Button</Button> */}
+            <MetaMaskButton>Connect with MetaMask</MetaMaskButton>
           </Flex>
         </form>
       </Card>
