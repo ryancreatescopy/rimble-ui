@@ -20,7 +20,7 @@ storiesOf('ToastMessage', module)
           <ToastMessage my={3} />
 
           <ToastMessage
-            secondaryMessage={'Lorem ipsum dolor sit.'}
+            secondaryMessage={'Lorem ipsum dolor sit. TEST'}
             my={3}
           />
           <ToastMessage
